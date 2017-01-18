@@ -47,18 +47,20 @@ int main()
 				numbClauses++;
 			}
 
-			if (CNFFIleText.at(i) != '('
-				& CNFFIleText.at(i) != ')'
-				& CNFFIleText.at(i) != 'V'
-				& CNFFIleText.at(i) != '&'
-				& CNFFIleText.at(i) != '?'
+			if (CNFFIleText.at(i) != '(' // Begin clause
+				& CNFFIleText.at(i) != ')' // End clause
+				& CNFFIleText.at(i) != 'V' // and
+				& CNFFIleText.at(i) != '&' // or
+				& CNFFIleText.at(i) != '?' // not
 				& !AllReadyIn(Done, CNFFIleText.at(i)))
 			{
-				numbLiterals++;
 				Done += CNFFIleText.at(i);
 			}
 		}
-		cout << numbClauses << endl << numbLiterals << endl;
+		
+		// -----------------------------------------------------
+
+
 	}
 	system("pause");
 	return 1;
